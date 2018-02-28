@@ -26,7 +26,7 @@ fi
 if [ ! -f "${CACHE_DIR}/${HAPROXY_DIR}/haproxy" ]; then
   echo "Compiling ${HAPROXY_DIR}..."
   cd ${CACHE_DIR}/${HAPROXY_DIR} || exit 4
-  make TARGET=linux2628 USE_STATIC_PCRE=1 || exit 5
+  make TARGET=linux2628 USE_STATIC_PCRE=1 USE_OPENSSL=1 || exit 5
 fi
 
 cp ${CACHE_DIR}/${HAPROXY_DIR}/haproxy ${BUILD_DIR}/haproxy || exit 6
